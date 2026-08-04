@@ -5,9 +5,9 @@ description = "A powerful Python CLI tool for pretty-printing JSON with syntax h
 authors = ["Your Name <you@example.com>"]
 readme = "README.md"
 license = "MIT"
-homepage = "https://github.com/yourusername/json-prettify"
-repository = "https://github.com/yourusername/json-prettify"
-documentation = "https://github.com/yourusername/json-prettify#readme"
+homepage = "https://github.com/adventurewave-labs/json-prettify"
+repository = "https://github.com/adventurewave-labs/json-prettify"
+documentation = "https://github.com/adventurewave-labs/json-prettify#readme"
 keywords = ["json", "pretty-print", "cli", "formatter", "syntax-highlighting", "validation", "terminal"]
 classifiers = [
     "Development Status :: 4 - Beta",
