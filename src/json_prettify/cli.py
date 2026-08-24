@@ -416,7 +416,7 @@ def main(
                 all_outputs.append(result)
             else:
                 # Output with or without syntax highlighting
-                if no_color or compact:
+                if no_color or compact or not sys.stdout.isatty():
                     click.echo(result)
                 else:
                     syntax = Syntax(result, "json", theme="monokai", line_numbers=False)
