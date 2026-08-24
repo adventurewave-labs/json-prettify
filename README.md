@@ -23,7 +23,9 @@ A powerful Python CLI tool for pretty-printing JSON with syntax highlighting, va
 ## 🚀 Installation
 
 ```bash
-pip install json-prettify
+git clone https://github.com/adventurewave-labs/json-prettify.git
+cd json-prettify
+pip install -e .
 ```
 
 ## 📖 Usage
@@ -204,7 +206,7 @@ This project uses Poetry for dependency management and follows modern Python dev
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/json-prettify.git
+git clone https://github.com/adventurewave-labs/json-prettify.git
 cd json-prettify
 
 # Install dependencies with Poetry
