@@ -68,4 +68,4 @@ def minify_json(json_str: str) -> str:
         json.JSONDecodeError: If the input is not valid JSON
     """
     data = json.loads(json_str)
-    return json.dumps(data, separators=(",", ":"))
+    return json.dumps(data, separators=(",", ":"), ensure_ascii=False)
