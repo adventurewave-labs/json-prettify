@@ -11,7 +11,7 @@ def format_json(
     indent: Optional[int] = 2,
     sort_keys: bool = False,
     compact: bool = False,
-    ensure_ascii: bool = True,
+    ensure_ascii: bool = False,
     separators: Optional[Tuple[str, str]] = None
 ) -> str:
     """

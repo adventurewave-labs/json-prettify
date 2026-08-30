@@ -85,7 +85,7 @@ class TestFormatJson:
         result = format_json(input_json, indent=None, separators=(',', ': '))
         
         # Should be compact but with space after colons
-        assert '{"items": [1,2,3],"active": true}' in result.replace(' ', '')
+        assert result == '{"items": [1,2,3],"active": true}'
 
 
 class TestFormatJsonStream:

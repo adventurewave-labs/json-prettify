@@ -314,7 +314,7 @@ def process_single_file(
 
 
 @click.command()
-@click.argument("files", nargs=-1, type=click.Path(path_type=Path))
+@click.argument("files", nargs=-1, type=click.Path(readable=False, path_type=Path))
 @click.option(
     "--indent",
     "-i",
@@ -457,7 +457,7 @@ def main(
                         all_outputs.append("")
                 else:
                     # Output with or without syntax highlighting
-                    if no_color or compact:
+                    if no_color or compact or not sys.stdout.isatty():
                         click.echo(result)
                     else:
                         syntax = Syntax(result, "json", theme="monokai", line_numbers=False)

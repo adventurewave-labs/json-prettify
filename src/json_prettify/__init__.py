@@ -13,13 +13,15 @@ from .validator import (
     JSONValidationError,
     ValidationError
 )
+from .cli import main
 
 __all__ = [
+    "main",
     "prettify_json",
     "format_json",
     "format_json_stream",
     "validate_json",
-    "validate_json_file", 
+    "validate_json_file",
     "get_validation_errors",
     "JSONValidationError",
     "ValidationError"

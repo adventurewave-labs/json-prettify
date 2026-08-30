@@ -64,26 +64,31 @@ def _get_line_and_column(text: str, pos: int) -> Tuple[int, int]:
 
 
 def _check_common_errors(json_string: str) -> Optional[str]:
-    """Check for common JSON syntax errors."""
+    """Check for common JSON syntax errors.
+
+    All messages returned here are error descriptions, so each one
+    explicitly mentions "error" for consistency with the messages
+    produced by the json.JSONDecodeError handling below.
+    """
     if not json_string.strip():
-        return "Empty or whitespace-only input"
-    
+        return "JSON error: empty or whitespace-only input"
+
     # Check for single quotes
     if "'" in json_string and not '"' in json_string:
         line_num = json_string[:json_string.index("'")].count('\n') + 1
-        return f"Single quotes are not valid in JSON at line {line_num}"
-    
+        return f"JSON error: single quotes are not valid in JSON at line {line_num}"
+
     # Check for trailing commas (simple heuristic)
     stripped = json_string.strip()
     if stripped.endswith(',}') or stripped.endswith(',]'):
         lines = json_string.split('\n')
         for i, line in enumerate(lines):
             if line.strip().endswith(',}') or line.strip().endswith(',]'):
-                return f"Trailing comma detected at line {i + 1}"
-    
+                return f"JSON error: trailing comma detected at line {i + 1}"
+
     # Check for incomplete JSON
     if stripped in ('{', '[', '"{', '"['):
-        return "Incomplete JSON structure"
+        return "JSON error: incomplete JSON structure"
     
     return None
 

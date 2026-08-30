@@ -169,8 +169,9 @@ class TestLargeArrays:
         assert '"id": 999' in result.output
         assert '"id": 1999' in result.output
         
-        # Check proper array formatting
-        assert '  {\n    "id": 0' in result.output
+        # Check proper array formatting (items are nested two levels deep:
+        # top-level object -> "data" array -> item object)
+        assert '    {\n      "id": 0' in result.output
     
     def test_large_array_compact(self, runner, large_array_json):
         """Test compact output of large arrays."""
@@ -493,7 +494,7 @@ class TestEdgeCases:
             "scientific": 1.23e-4,
             "empty_string": "",
             "escape_chars": "line1\nline2\ttab\r\nwindows",
-            "unicode_escape": "\u0048\u0065\u006c\u006c\u006f"
+            "unicode_escape": "Hello"
         })
         
         result = runner.invoke(main, input=input_json)
