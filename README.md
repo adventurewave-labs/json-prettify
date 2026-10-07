@@ -1,3 +1,5 @@
+<p align="center"><img src="assets/banner.svg" alt="json-prettify — animated banner" width="100%"></p>
+
 # JSON Prettify
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
